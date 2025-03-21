@@ -7,6 +7,7 @@ class Pointermove {
         
         if (props._root.$id.cpickerBoxCanvas.hasPointerCapture(e.pointerId)) {                        
             const color = methods._getSolidColorCanvasXYColor(e, true);
+            color.rgbaA = props._root.$id.cpickerTransparentInput.value;
             methods._updateTransparentSliderColor(color);
             methods._updateRGBAColorCode(color);
             methods._updateCSSColorCode(color);
