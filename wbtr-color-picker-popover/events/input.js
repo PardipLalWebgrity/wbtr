@@ -6,8 +6,23 @@ class Input {
 	static _handler(){
         const tId = WBTR.eventTarget.dataset.id;
         if(tId == 'cpicker-gradient-input') {
-            props._color = methods._getGradientColorSliderColor();
+            
+           if(WBTR.eventTarget.value == 0 || WBTR.eventTarget.value == WBTR.eventTarget.offsetWidth-1)  {
+                props._color.hexa = '#FF0000ff';
+                props._color.rgbaR = 255;
+                props._color.rgbaG = 0;
+                props._color.rgbaB = 0;
+                props._color.rgbaA = 1;
+                props._color.hsv.h = 0;
+                props._color.hsv.s = 100;
+                props._color.hsv.v = 100;
+           } else {
+                props._color = methods._getGradientColorSliderColor();
+           }
+
             methods._renderSolidColorCanvasColor();
+            console.log(props._color.hexa);
+            props._color.rgbaA = props._root.$id.cpickerTransparentInput.value;
             methods._updateRGBAColorCode();
             methods._updateCSSColorCode();
             methods._updateHEXAColorCode();
