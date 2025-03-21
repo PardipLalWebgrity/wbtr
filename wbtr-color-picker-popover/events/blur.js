@@ -4,9 +4,7 @@ import methods from '../utils/methods.js';
 class Blur {
 
     static _handler(e) {
-
         if(WBTR.eventTarget.dataset.id === 'cpicker-code-hex-input') this._haxInputBlurHandle();
-        console.log(props._color.hexa);
     }
 
     static _haxInputBlurHandle(){
