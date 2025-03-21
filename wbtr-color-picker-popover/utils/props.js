@@ -1,7 +1,9 @@
 
 
 const props = {
- _color: {},
+ _color: {
+  hsv: {}
+ },
 }
 
 export default props;
