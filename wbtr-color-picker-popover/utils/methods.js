@@ -121,7 +121,10 @@ const Methods = {
     },
 
     _updateHEXAColorCode(color = props._color){
-        props._root.$id.cpickerCodeHexInput.value = color.hexa;
+        let hex = color.hexa.slice(0, 7);
+        let a = props._root.$id.cpickerTransparentInput.value;
+        let hexa = hex + (Math.round(a * 255).toString(16).padStart(2, "0"));
+        props._root.$id.cpickerCodeHexInput.value = hexa;
     },
 
 
