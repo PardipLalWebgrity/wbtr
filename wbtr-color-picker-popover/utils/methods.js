@@ -91,6 +91,7 @@ const Methods = {
     },
 
     renderGradientColorSliderPointer(color = props._color){
+        console.log(color.hsv.h);
         props._root.$id.cpickerGradientInput.value = ((color.hsv.h * 100) / 100).toFixed(2);
     },
 
